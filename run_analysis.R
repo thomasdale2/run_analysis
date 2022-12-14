@@ -1,5 +1,3 @@
-#Merges the training and the testing sets to create one data set.
-
 #Download file
 packages <- c("data.table", "reshape2","dplyr")
 sapply(packages, require, character.only=TRUE, quietly=TRUE)
@@ -8,6 +6,7 @@ url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR
 download.file(url, file.path(path, "dataFiles.zip"))
 unzip(zipfile = "dataFiles.zip")
 
+#name data sets
 features <- read.table("UCI HAR Dataset/features.txt", col.names = c("n","functions"))
 activities <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("code", "activity"))
 subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt", col.names = "subject")
